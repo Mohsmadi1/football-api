@@ -1,5 +1,6 @@
 ﻿using football_api.Helpers;
 using football_api.Models;
+using football_api.Services;
 using football_api.Services.Interfaces;
 using Microsoft.AspNetCore.Mvc;
 using System.Numerics;
@@ -11,12 +12,12 @@ namespace football_api.Controllers;
 public class PlayersController
 {
     private readonly IPlayerService _playerService;
-    
+
     public PlayersController(IPlayerService playerService)
     {
         _playerService = playerService;
     }
-    
+
     [HttpGet]
     [Route("Get/{id}")]
     public string GetPlayer(int id)
